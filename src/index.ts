@@ -9,3 +9,9 @@ const result = addition(number1, number2);
 console.log(`The application name is "${process.env.APP_NAME}"`);
 
 console.log('The result is %d', result);
+
+const names = ['Eric', 'Fabrice', 'Pavel', 'Sanix', 'Ange'];
+
+for (const name of names) {
+  console.log(`Hello ${name}!`);
+}
