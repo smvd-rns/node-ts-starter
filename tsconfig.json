@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "module": "ESNext",
+    "module": "commonjs",
+    "moduleResolution": "node",
     "lib": ["dom"],
     "outDir": "./build",
     "strict": true,

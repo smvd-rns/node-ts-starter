@@ -1,11 +1,20 @@
-const addition = (a: number, b: number) => {
-  return a + b;
-};
+import express from 'express';
+import { connectToDatabase } from './db-connection';
 
-const number1 = 5;
-const number2 = 10;
-const result = addition(number1, number2);
+const HOST = process.env.HOST || 'http://localhost';
+const PORT = parseInt(process.env.PORT || '4500');
 
-console.log(`The application name is "${process.env.APP_NAME}"`);
+const app = express();
 
-console.log('The result is %d', result);
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+app.get('/', (req, res) => {
+  return res.json({ message: 'Hello World!' });
+});
+
+app.listen(PORT, async () => {
+  await connectToDatabase();
+
+  console.log(`Application started on URL ${HOST}:${PORT} 🎉`);
+});

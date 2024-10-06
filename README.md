@@ -1,30 +1,24 @@
-# Node Typescript Starter
+# Node TypeScript Starter
 
-This project contains a minimal starter for Node.js project with TypeScript, ESLint and Prettier
-
-## Features
-* Latest TypeScript features
-* Node.js package management with Yarn
-* Linting and Formating with ESLint and Prettier
-* Read Environment variables 
-* Live reload on file change using Nodemon
-
-## Starter projects available
-The repository provides three additional projects with various features depending on your needs.
-Each project is available on a Git branch; take the all the features of the main branch and add the new ones.
-
-The following table below list the projects
-
-| Name                  | Branch                                                                             | Description                                                        |
-|-----------------------|------------------------------------------------------------------------------------|--------------------------------------------------------------------|
-| Express Starter       | [express](https://github.com/tericcabrel/node-ts-starter/tree/express)             | Start a Node.js project with the Framework Express.                |
-| Express Mongo Starter | [express-mongo](https://github.com/tericcabrel/node-ts-starter/tree/express-mongo) | Start a Node.js project with the Framework Express and MongoDB.    |
-| Biome                 | [biome](https://github.com/tericcabrel/node-ts-starter/tree/biome)                 | Start a Node.js project with Biome instead of ESLint and Prettier. |
-
+This project contains a minimal starter for Node.js project with TypeScript, ESLint and Prettier that connect to a MongoDB database.
 
 ## Prerequisites
 - Node.js 20.6.0 or higher
 - Yarn
+- MongoDB
+
+## Getting Started
+Run a Docker container of MongoDB
+```bash
+docker run -d --rm -e MONGO_INITDB_ROOT_USERNAME=user -e MONGO_INITDB_ROOT_PASSWORD=secret -p 27018:27017 --name mongodb mongo:8.0
+```
+
+- Create application configuration
+```bash
+cp .env.example .env
+nano .env
+```
+In the `.env` file, set the MONGODB_URL to `mongodb://user:secret@localhost:27018/admin`
 
 ## Installation
 - Install dependencies
